@@ -22,7 +22,11 @@ class App extends Component {
       <div style={{ textAlign: "center" }}>
         {response.temperature && response.time
           ?
-              <h1> The temperature in San Diego is: {response.temperature} °F at {(new Date(response.time*1000)).toString()} </h1>
+              <h1>
+                The temperature in San Diego is:
+                <br />
+                {response.temperature} °F at {(new Date(response.time*1000)).toString()}
+              </h1>
 
           : <p>Loading...</p>}
       </div>
