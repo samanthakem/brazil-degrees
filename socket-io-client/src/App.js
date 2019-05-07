@@ -17,6 +17,7 @@ class App extends Component {
       endpoint: "http://127.0.0.1:4001"
     };
   }
+    
   componentDidMount() {
     const { endpoint } = this.state;
     const socket = socketIOClient(endpoint);
