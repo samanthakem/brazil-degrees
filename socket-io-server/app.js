@@ -24,7 +24,7 @@ io.on("connection", socket => {
 const getData = async socket => {
     try {
         const res = await axios.get(
-            "https://api.darksky.net/forecast/"+API_KEY+"/32.7157,117.1611"
+            "https://api.darksky.net/forecast/"+API_KEY+"/-7.2306,-35.8811"
         );
         socket.emit("FromAPI", res.data.currently);
     } catch (error) {

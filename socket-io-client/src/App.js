@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
+import { css } from '@emotion/core';
+import { FadeLoader } from 'react-spinners';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 class App extends Component {
   constructor() {
@@ -23,12 +31,20 @@ class App extends Component {
         {response.temperature && response.time
           ?
               <h1>
-                The temperature in San Diego is:
+                The temperature in Campina Grande, Brazil is:
                 <br />
                 {response.temperature} °F at {(new Date(response.time*1000)).toString()}
               </h1>
 
-          : <p>Loading...</p>}
+          :
+          <FadeLoader
+            css={override}
+            sizeUnit={"px"}
+            size={150}
+            color={'#123abc'}
+            loading={true}
+          />
+        }
       </div>
     );
   }
